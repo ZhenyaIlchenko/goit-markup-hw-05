@@ -9,6 +9,8 @@
 	--second-bgcolor: #2f303a;
 	--fourth-bgcolor: #f5f4fa;
 	--footer-mail-tel-color: rgba(255, 255, 255, 0.6);
+
+	--transition-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -122,6 +124,8 @@ img {
 	display: inline-block;
 	padding-top: 32px;
 	padding-bottom: 32px;
+
+	transition: color var(--transition-function);
 }
 
 .header-link.active {
@@ -158,6 +162,8 @@ img {
 	display: inline-block;
 	padding-top: 32px;
 	padding-bottom: 32px;
+
+	transition: color var(--transition-function);
 }
 
 .header-icon {
@@ -256,6 +262,8 @@ img {
 	justify-content: center;
 
 	fill: #ffffff;
+
+	transition: background-color var(--transition-function);
 }
 
 .footer-social-link:hover,
@@ -273,7 +281,7 @@ img {
 	padding-bottom: 200px;
 
 	max-width: 1600px;
-	margin: o auto;
+	margin: 0 auto;
 
 	background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/herofon.jpg);
 	background-repeat: no-repeat;
@@ -398,6 +406,30 @@ img {
 	gap: 30px;
 }
 
+.about-item {
+	position: relative;
+}
+
+.about-top-text {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	text-align: center;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+
+	color: var(--primary-white-color);
+	background-color: rgba(47, 48, 58, 0.8);
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	min-height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 /* Section Team */
 
 .team {
@@ -461,6 +493,8 @@ img {
 	justify-content: center;
 
 	fill: #afb1b8;
+
+	transition: fill var(--transition-function), background-color var(--transition-function);
 }
 
 .team-link-icon:hover,
@@ -502,6 +536,7 @@ img {
 	border-radius: 4px;
 
 	fill: #afb1b8;
+	transition: fill var(--transition-function);
 }
 
 .clients-link:hover,
@@ -543,6 +578,9 @@ img {
 
 	padding: 6px 22px;
 	border-color: transparent;
+
+	transition: color var(--transition-function), background-color var(--transition-function),
+		box-shadow var(--transition-function);
 }
 
 .portfolio-btn:hover,
@@ -566,11 +604,41 @@ img {
 
 .portfolio-link {
 	display: block;
+	transition: box-shadow var(--transition-function);
 }
 
 .portfolio-link:hover,
 .portfolio-link:focus {
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-link:hover .portfolio-top-text {
+	transform: translateY(0%);
+}
+
+.portfolio-top-wrap {
+	position: relative;
+	overflow: hidden;
+}
+.portfolio-top-text {
+	font-size: 18px;
+	line-height: 1.5;
+	letter-spacing: 0.03em;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+
+	color: var(--primary-white-color);
+	background-color: rgba(33, 150, 243, 0.9);
+
+	padding: 63px 24px;
+
+	transform: translateY(100%);
+	transition: transform var(--transition-function);
+	overflow: auto;
 }
 
 .portfolio-title {
